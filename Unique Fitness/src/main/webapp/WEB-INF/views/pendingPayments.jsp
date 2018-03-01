@@ -22,25 +22,6 @@
 	type="text/css" media="all" />
 <script type='text/javascript'
 	src="/uniqueFitness/resources/js/jquery.min.js"></script>
-<script type='text/javascript'
-	src="/uniqueFitness/resources/js/jquery.easing.1.3.js"></script>
-<script type='text/javascript'
-	src="/uniqueFitness/resources/js/camera.min.js"></script>
-<script>
-	jQuery(function() {
-
-		jQuery('#camera_wrap_4').camera({
-			height : 'auto',
-			loader : 'bar',
-			pagination : false,
-			thumbnails : true,
-			hover : false,
-			opacityOnGrid : false,
-			imagePath : '/uniqueFitness/resources/images/'
-		});
-
-	});
-</script>
 <style type="text/css">
 .myclass {
 	margine-top: 4px;

@@ -37,5 +37,11 @@
 	<beans:bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
 		<beans:property name="dataSource" ref="ds"></beans:property>
 	</beans:bean>
+	<beans:bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 
+		 <!-- setting maximum upload size -->
+		<beans:property name="maxUploadSize" value="2097152" />
+
+	</beans:bean>
 </beans:beans>

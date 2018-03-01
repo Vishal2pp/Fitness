@@ -15,24 +15,7 @@
 <link rel="stylesheet" type="text/css" href="/uniqueFitness/resources/css/main.css">
 <!--slider-->
 <link href="/uniqueFitness/resources/css/camera.css" rel="stylesheet" type="text/css" media="all" />
-<script type='text/javascript' src="/uniqueFitness/resources/js/jquery.min.js"></script>
-<script type='text/javascript' src="/uniqueFitness/resources/js/jquery.easing.1.3.js"></script>
-<script type='text/javascript' src="/uniqueFitness/resources/js/camera.min.js"></script>
-<script>
-	jQuery(function() {
 
-		jQuery('#camera_wrap_4').camera({
-			height : 'auto',
-			loader : 'bar',
-			pagination : false,
-			thumbnails : true,
-			hover : false,
-			opacityOnGrid : false,
-			imagePath : '/uniqueFitness/resources/images/'
-		});
-
-	});
-</script>
 </head>
 
 <body>
@@ -40,7 +23,7 @@
 		<div class="wrap">
 			<div class="logo">
 				<h1>
-					<a href="/uniqueFitness/login"><img src="/uniqueFitness/resources/images/logo.png" alt=""></a>
+					<a href="login"><img src="/uniqueFitness/resources/images/logo.png" alt=""></a>
 				</h1>
 			</div>
 		</div>

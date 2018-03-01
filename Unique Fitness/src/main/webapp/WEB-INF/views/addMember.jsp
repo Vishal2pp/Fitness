@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
@@ -29,10 +30,7 @@
 
 <script type='text/javascript'
 	src="/uniqueFitness/resources/js/jquery-3.3.1.min.js"></script>
-<script type='text/javascript'
-	src="/uniqueFitness/resources/js/jquery.easing.1.3.js"></script>
-<script type='text/javascript'
-	src="/uniqueFitness/resources/js/camera.min.js"></script>
+
 
 <style type="text/css">
 .myclass {
@@ -115,83 +113,116 @@
 		<div class="container">
 			<header>
 			<h1>
-				<span>Tutorials</span> Demo Beautiful Registration Form with HTML5
-				and CSS3
+				Member Registration Form
 			</h1>
 			</header>
 			<div class="form">
-				<form id="addform">
-					<p class="contact">
-						<label for="name">Name</label>
-					</p>
-					<input id="name" name="name" placeholder="First and last name"
-						required="" tabindex="1" type="text">
-
-					<p class="contact">
-						<label for="email">Email</label>
-					</p>
-					<input id="email" name="email" placeholder="example@domain.com"
-						required="" type="email">
-
-					<p class="contact">
-						<label for="phone">Phone Number</label>
-					</p>
-					<input id="phone" name="phone" placeholder="Phone Number"
-						required="" tabindex="2" type="text">
-
-
-					<fieldset>
-						<label>Birthday</label> <input type="date" name="birthDate" />
-					</fieldset>
-
-					<select class="select-style gender" name="gender">
-						<option value="select">Select Gender</option>
-						<option value="Male">Male</option>
-						<option value="Female">Female</option>
-						<option value="Other">Other</option>
-					</select><br>
-					<br>
-
+				<form action="addMemberData" method="POST" enctype="multipart/form-data">
+			<table cellspacing="10">
+					<tr>
+						<td>Name-</td>
+						<td><input name="name" placeholder="Full Name" size="50" tabindex="1" type="text"></td>
+					</tr>
 					
-					<fieldset>
-						<label>Package</label> <select class="select-style gender"
-							name="package" id="pkg">
-							<option value="select">Select Package</option>
-							<c:forEach items="${pkgData}" var="pkg">
+					<tr>
+						<td>Email-</td>
+						<td><input name="email" placeholder="example@domain.com" size="50" tabindex ="2" type="email"/></td>
+					</tr>
+					
+					
+					<tr>
+						<td>Phone Number-</td>
+						<td><input name="number" placeholder="Phone Number" tabindex="3" type="number"/></td>
+					</tr>
+
+					<tr>
+						<td>Birthdate-</td>
+						<td><input type="date" name="dob" /></td>
+					</tr>
+					
+					<tr>
+						<td>Age-</td>
+						<td><input type="number" name="age" /></td>
+					</tr>
+					<tr>
+						<td>Photo-</td>
+						<td><input type="file" name="file" /></td>
+					</tr>
+					
+					<tr>
+						<td>Address- </td>
+						<td><textarea rows="4" cols="50" name="address"></textarea></td>
+					</tr>
+					<tr>
+						<td>Gender-</td>
+						<td>
+							<select class="select-style gender" name="gender">
+								<option value="select">Select Gender</option>
+								<option value="Male">Male</option>
+								<option value="Female">Female</option>
+								<option value="Other">Other</option>
+							</select>
+						</td>	
+					</tr>
+					
+					
+					<tr>
+						<td>Package</td>
+						<td>
+							<select class="select-style gender" name="pkgId" id="pkg">
+								<option value="select">Select Package</option>
+								<c:forEach items="${pkgData}" var="pkg">
 								<option value="${pkg.pkgId}" id="${pkg.pkgAmount}">${pkg.pkgName}
 									-- ${pkg.pkgAmount} Rs.</option>
-							</c:forEach>
-						</select>
-					</fieldset>
-					<br>
-					<br>
-					<fieldset>
-						<p class="contact">
-							<label for="phone">Package Amount</label>
-						</p>
-						<input id="pkgAmt" name="pkgAmt" type="text" disabled="disabled"
-							value="0"> <br>
-					</fieldset><br><br>
+								</c:forEach>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td>Package Start Date-</td>
+						<td><input type="date" name="pkgStartDate" /></td>
+					</tr>
 					
-					<fieldset>
-						<p class="contact">
-							<label for="phone">Paid Amount</label>
-						</p>
-						<input id="paid" name="paid" type="text"
-							value="0"> <br>
-					</fieldset><br><br>
+					<tr>
+						<td>Package End Date-</td>
+						<td><input type="date" name="pkgEndDate" /></td>
+					</tr>
+					<tr>
+						<td>Package Amount</td>
+						<td><input id="pkgAmt" name="pkgAmt" type="text" disabled="disabled" value="0"></td>
+					</tr>
 					
-					<fieldset>
-						<p class="contact">
-							<label for="phone">Pending Amount</label>
-						</p>
-						<input id="pending" name="pending" type="text"
-							value="0" disabled="disabled"> <br>
-					</fieldset><br><br>
+					<tr>
+						<td>Paid Amount</td>
+						<td><input id="paid" name="paidAmount" type="text" value="0"></td>
+					</tr>
 					
-					<input class="buttom" name="submit" id="submit" tabindex="5"
-						value="Sign me up!" type="submit">
-				</form>
+						<tr>
+						<td>Pending Amount</td>
+						<td><input id="pending" name="pendingAmount" type="text" value="0" disabled="disabled"> </td>
+						</tr>
+					<tr>
+						<td>Payment Receipt No.-</td>
+						<td><input type="text" name="receiptNo"/></td>
+					</tr>
+					
+					<tr>
+						<td>Payment Date-</td>
+						<td><input type="date" name="paymentDate"/></td>
+					</tr>
+					
+					<tr>
+						<td>Payment Due Date-</td>
+						<td><input type="date" name="dueDate"/></td>
+					</tr>
+					<tr>
+						<td>Gym Time-</td>
+						<td><input type="text" name="gymTime" /></td>
+					</tr>
+					
+					
+					<tr><td></td><td><input class="buttom" name="submit" id="submit" tabindex="5" value="Add Member" type="submit"></td></tr>
+				</table></form>
 			</div>
 		</div>
 
@@ -207,15 +238,7 @@
 	<div class="ftr-bg">
 		<div class="wrap">
 			<div class="footer">
-				<div class="social-icons">
-					<ul>
-						<li class="facebook"></li>
-						<li class="twitter"></li>
-						<li class="googleplus"></li>
-						<li class="contact"></li>
-						<div class="clear"></div>
-					</ul>
-				</div>
+				
 				<div class="copy">
 					<p>
 					<h4>© 2018 Unique Fitness . All Rights Reserved | Design by
