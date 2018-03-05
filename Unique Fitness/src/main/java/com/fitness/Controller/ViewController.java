@@ -53,5 +53,12 @@ public class ViewController {
 	public String modifyPay() {
 		return "modifyPayment";
 	}
-	
+	@RequestMapping(value = "error", method = RequestMethod.GET)
+	public String error(ModelMap model) {
+		return "error";
+	}
+	@RequestMapping(value = "success", method = RequestMethod.GET)
+	public String success(ModelMap model) {
+		return "success";
+	}
 }

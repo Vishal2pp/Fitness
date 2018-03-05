@@ -6,18 +6,6 @@ public class Member {
 		
 		private int id;
 		private int paymentId;
-		public int getId() {
-			return id;
-		}
-		public void setId(int id) {
-			this.id = id;
-		}
-		public int getPaymentId() {
-			return paymentId;
-		}
-		public void setPaymentId(int paymentId) {
-			this.paymentId = paymentId;
-		}
 		private String name;
 		private String email;
 		private long number;
@@ -32,20 +20,40 @@ public class Member {
 		private String pkgEndDate;
 		private double pendingAmount;
 		private double pkgAmt;
+		private double paidAmount;
+		private String dueDate = "00-00-0000";
+		private long receiptNo;
+		private String paymentDate;
+		private String paymentStatus;
+		private String imagePath;
+		private String memberStatus = "Active";
+		private String regDate = "";
+		
+		
+		public String getRegDate() {
+			return regDate;
+		}
+		public void setRegDate(String regDate) {
+			this.regDate = regDate;
+		}
+		public int getId() {
+			return id;
+		}
+		public void setId(int id) {
+			this.id = id;
+		}
+		public int getPaymentId() {
+			return paymentId;
+		}
+		public void setPaymentId(int paymentId) {
+			this.paymentId = paymentId;
+		}
 		public double getPkgAmt() {
 			return pkgAmt;
 		}
 		public void setPkgAmt(double pkgAmt) {
 			this.pkgAmt = pkgAmt;
 		}
-		private double paidAmount;
-		private String dueDate;
-		private long receiptNo;
-		private String paymentDate;
-		private String paymentStatus;
-		private String imagePath;
-		private String memberStatus = "Active";
-		
 		public String getImagePath() {
 			return imagePath;
 		}

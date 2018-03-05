@@ -137,26 +137,26 @@
 
 					<tr>
 						<td>Birthdate-</td>
-						<td><input type="date" name="dob" /></td>
+						<td><input type="date" name="dob" tabindex="4" /></td>
 					</tr>
 					
 					<tr>
 						<td>Age-</td>
-						<td><input type="number" name="age" /></td>
+						<td><input type="number" name="age" tabindex="5"/></td>
 					</tr>
 					<tr>
 						<td>Photo-</td>
-						<td><input type="file" name="file" /></td>
+						<td><input type="file" name="file" tabindex="6"/></td>
 					</tr>
 					
 					<tr>
 						<td>Address- </td>
-						<td><textarea rows="4" cols="50" name="address"></textarea></td>
+						<td><textarea rows="4" cols="50" name="address" tabindex="7"></textarea></td>
 					</tr>
 					<tr>
 						<td>Gender-</td>
 						<td>
-							<select class="select-style gender" name="gender">
+							<select class="select-style gender" name="gender" tabindex="8">
 								<option value="select">Select Gender</option>
 								<option value="Male">Male</option>
 								<option value="Female">Female</option>
@@ -169,7 +169,7 @@
 					<tr>
 						<td>Package</td>
 						<td>
-							<select class="select-style gender" name="pkgId" id="pkg">
+							<select class="select-style gender" name="pkgId" id="pkg" tabindex="9">
 								<option value="select">Select Package</option>
 								<c:forEach items="${pkgData}" var="pkg">
 								<option value="${pkg.pkgId}" id="${pkg.pkgAmount}">${pkg.pkgName}
@@ -180,12 +180,12 @@
 					</tr>
 					<tr>
 						<td>Package Start Date-</td>
-						<td><input type="date" name="pkgStartDate" /></td>
+						<td><input type="date" name="pkgStartDate" tabindex="10"/></td>
 					</tr>
 					
 					<tr>
 						<td>Package End Date-</td>
-						<td><input type="date" name="pkgEndDate" /></td>
+						<td><input type="date" name="pkgEndDate" tabindex="11" /></td>
 					</tr>
 					<tr>
 						<td>Package Amount</td>
@@ -194,7 +194,7 @@
 					
 					<tr>
 						<td>Paid Amount</td>
-						<td><input id="paid" name="paidAmount" type="text" value="0"></td>
+						<td><input id="paid" name="paidAmount" type="text" value="0" tabindex="12"></td>
 					</tr>
 					
 						<tr>
@@ -203,25 +203,25 @@
 						</tr>
 					<tr>
 						<td>Payment Receipt No.-</td>
-						<td><input type="text" name="receiptNo"/></td>
+						<td><input type="text" name="receiptNo" tabindex="13"/></td>
 					</tr>
 					
 					<tr>
 						<td>Payment Date-</td>
-						<td><input type="date" name="paymentDate"/></td>
+						<td><input type="date" name="paymentDate" tabindex="14"/></td>
 					</tr>
 					
 					<tr>
 						<td>Payment Due Date-</td>
-						<td><input type="date" name="dueDate"/></td>
+						<td><input type="date" name="dueDate" tabindex="15"/></td>
 					</tr>
 					<tr>
 						<td>Gym Time-</td>
-						<td><input type="text" name="gymTime" /></td>
+						<td><input type="text" name="gymTime" tabindex="16"/></td>
 					</tr>
 					
 					
-					<tr><td></td><td><input class="buttom" name="submit" id="submit" tabindex="5" value="Add Member" type="submit"></td></tr>
+					<tr><td></td><td><input class="buttom" name="submit" id="submit" tabindex="17" value="Add Member" type="submit"></td></tr>
 				</table></form>
 			</div>
 		</div>

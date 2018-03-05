@@ -85,14 +85,16 @@
 					<div class="dropdown">
 						<button type="button" class="dropbtn">
 							<font color="white"><b><a href="/uniqueFitness/logout">Log
-										out</b></font>
+										out</a></b></font>
 						</button>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	
+	<div class="fluid_container">
+		<h1>${msg}</h1>
+	</div>
 	<div class="clear"></div>
 	<div class="ftr-bg">
 		<div class="wrap">
