@@ -3,7 +3,21 @@ package com.fitness.Model;
 import org.springframework.web.multipart.MultipartFile;
 
 public class Member {
-	
+		
+		private int id;
+		private int paymentId;
+		public int getId() {
+			return id;
+		}
+		public void setId(int id) {
+			this.id = id;
+		}
+		public int getPaymentId() {
+			return paymentId;
+		}
+		public void setPaymentId(int paymentId) {
+			this.paymentId = paymentId;
+		}
 		private String name;
 		private String email;
 		private long number;
@@ -17,12 +31,20 @@ public class Member {
 		private String pkgStartDate;
 		private String pkgEndDate;
 		private double pendingAmount;
+		private double pkgAmt;
+		public double getPkgAmt() {
+			return pkgAmt;
+		}
+		public void setPkgAmt(double pkgAmt) {
+			this.pkgAmt = pkgAmt;
+		}
 		private double paidAmount;
 		private String dueDate;
 		private long receiptNo;
 		private String paymentDate;
 		private String paymentStatus;
 		private String imagePath;
+		private String memberStatus = "Active";
 		
 		public String getImagePath() {
 			return imagePath;
@@ -36,7 +58,6 @@ public class Member {
 		public void setPaymentStatus(String paymentStatus) {
 			this.paymentStatus = paymentStatus;
 		}
-		private String memberStatus = "Active";
 		public String getName() {
 			return name;
 		}
@@ -139,10 +160,10 @@ public class Member {
 		public void setPaymentDate(String paymentDate) {
 			this.paymentDate = paymentDate;
 		}
-		public String getStatus() {
+		public String getMemberStatus() {
 			return memberStatus;
 		}
-		public void setStatus(String memberStatus) {
+		public void setMemberStatus(String memberStatus) {
 			this.memberStatus = memberStatus;
 		}
 		@Override
@@ -150,10 +171,14 @@ public class Member {
 			return "Member [name=" + name + ", email=" + email + ", number=" + number + ", dob=" + dob + ", age=" + age
 					+ ", gender=" + gender + ", address=" + address + ", gymTime=" + gymTime + ", file=" + file
 					+ ", pkgId=" + pkgId + ", pkgStartDate=" + pkgStartDate + ", pkgEndDate=" + pkgEndDate
-					+ ", pendingAmount=" + pendingAmount + ", paidAmount=" + paidAmount + ", dueDate=" + dueDate
-					+ ", receiptNo=" + receiptNo + ", paymentDate=" + paymentDate + ", paymentStatus=" + paymentStatus
-					+ ", imagePath=" + imagePath + ", memberStatus=" + memberStatus + "]";
+					+ ", pendingAmount=" + pendingAmount + ", pkgAmt=" + pkgAmt + ", paidAmount=" + paidAmount
+					+ ", dueDate=" + dueDate + ", receiptNo=" + receiptNo + ", paymentDate=" + paymentDate
+					+ ", paymentStatus=" + paymentStatus + ", imagePath=" + imagePath + ", memberStatus=" + memberStatus
+					+ "]";
 		}
+	
+		
+		
 		
 		
 	

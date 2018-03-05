@@ -3,6 +3,8 @@ package com.fitness.Controller;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 import org.apache.commons.lang3.SystemUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,13 +25,14 @@ public class FitnessController {
 	@Autowired
 	private DownloadDataService download;
 	@Autowired
-	private MemberService member;
+	private MemberService memberService;
 	@Autowired
 	private SmsEmailService smsMail;
 	
 	@RequestMapping(value="addMemberData", method = RequestMethod.POST)
 	public String addMemberData(@ModelAttribute("Member")Member member, ModelMap model) {
 		System.out.println(member);
+		boolean flag = false;
 		MultipartFile file = member.getFile();
 		if(file.isEmpty()) {
 			model.put("msg", "Failed to add member as photo is not upploaded. Please try again");
@@ -47,6 +50,7 @@ public class FitnessController {
 					stream.write(bytes);
 					stream.close();
 					member.setImagePath(name);
+					flag = true;
 
 				} catch (Exception e) {
 					model.put("msg", "Failed to add member as photo is not upploaded. Please try again");
@@ -65,6 +69,7 @@ public class FitnessController {
 				stream.write(bytes);
 				stream.close();
 				member.setImagePath(name);
+				flag = true;
 				} catch (Exception e) {
 					model.put("msg", "Failed to add member as photo is not upploaded. Please try again");
 					return "error";
@@ -72,9 +77,24 @@ public class FitnessController {
 			}
 		}
 		
-		return "login";
+		if(flag) {
+			member.setPendingAmount(member.getPkgAmt()-member.getPaidAmount());
+			if(member.getPendingAmount() == 0) {
+				member.setPaymentStatus("Done");
+				member.setMemberStatus("Active");
+			}else {
+				member.setPaymentStatus("Pending");
+				member.setMemberStatus("Active");
+			}
+			memberService.addMember(member);
+			return "redirect:login";
+		}
+		
+		return "error";
 	}
 	public static void main(String[] args) {
-		System.out.println(System.getProperty("os.name"));
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");  
+		   LocalDateTime now = LocalDateTime.now();  
+		   System.out.println(dtf.format(now));  
 	}
 }

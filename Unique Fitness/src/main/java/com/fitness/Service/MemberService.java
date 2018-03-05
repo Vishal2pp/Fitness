@@ -1,5 +1,7 @@
 package com.fitness.Service;
 
-public interface MemberService {
+import com.fitness.Model.Member;
 
+public interface MemberService {
+	public boolean addMember(Member member);
 }

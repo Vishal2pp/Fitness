@@ -189,7 +189,7 @@
 					</tr>
 					<tr>
 						<td>Package Amount</td>
-						<td><input id="pkgAmt" name="pkgAmt" type="text" disabled="disabled" value="0"></td>
+						<td><input id="pkgAmt" name="pkgAmt" type="text" readonly="readonly" value="0"></td>
 					</tr>
 					
 					<tr>
@@ -199,7 +199,7 @@
 					
 						<tr>
 						<td>Pending Amount</td>
-						<td><input id="pending" name="pendingAmount" type="text" value="0" disabled="disabled"> </td>
+						<td><input id="pending" name="pendingAmount" type="text" value="0" readonly="readonly"> </td>
 						</tr>
 					<tr>
 						<td>Payment Receipt No.-</td>
