@@ -4,210 +4,185 @@
 <html>
 
 <head>
-<title>Member added!!</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, maximum-scale=1">
-<link href='//fonts.googleapis.com/css?family=Sofia' rel='stylesheet'
-	type='text/css'>
+<title>Unique Fitness</title>
+
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800|Montserrat:300,400,700" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="/uniqueFitness/resources/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="/uniqueFitness/resources/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/uniqueFitness/resources/lib/animate/animate.min.css" rel="stylesheet">
+  <link href="/uniqueFitness/resources/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+  <link href="/uniqueFitness/resources/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="/uniqueFitness/resources/lib/magnific-popup/magnific-popup.css" rel="stylesheet">
+  <link href="/uniqueFitness/resources/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" media="all" href="/uniqueFitness/resources/css/member.css">
-<link href="/uniqueFitness/resources/css/style.css" rel="stylesheet"
-	type="text/css" media="all" />
+  <!-- Main Stylesheet File -->
+  <link href="/uniqueFitness/resources/css/style.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css"
-	href="/uniqueFitness/resources/css/util.css">
-<link rel="stylesheet" type="text/css"
-	href="/uniqueFitness/resources/css/main.css">
-	
+	href="/uniqueFitness/resources/css/table.css">
 <!--slider-->
-<link href="/uniqueFitness/resources/css/camera.css" rel="stylesheet"
-	type="text/css" media="all" />
-<script type='text/javascript'
-	src="/uniqueFitness/resources/js/jquery-3.3.1.min.js"></script>
-<style type="text/css">
-.myclass {
-	margine-top: 4px;
-	float: right;
-}
-.myh1{
-	position: relative;
-	color: #498ea5;
-	font-weight: 700;
-	text-align: center;
-	font-style: normal;
-	font-size: 30px;
-	padding: 10px 0px 5px 0px;
-	text-shadow: 0px 1px 1px rgba(255,255,255,0.8);
-}
-</style>
+
 </head>
 
 <body>
-	<div class="h_bg">
-		<div class="wrap">
-			<div class="logo">
-				<h1>
-					<a href="/uniqueFitness/login"><img
-						src="/uniqueFitness/resources/images/logo.png" alt=""></a>
-				</h1>
-			</div>
-		</div>
-	</div>
+<!--==========================
+    Top Bar
+  ============================-->
+  <section id="topbar" class="d-none d-lg-block">
+  <!--==========================
+    Header
+  ============================-->
+  <header id="header">
+    <div class="container">
 
-	<div class="navbar nav_bg">
-		<div class="wrap">
-			<div class="menu">
-				<div class="dropdown">
-					<button class="dropbtn active" href="#home">Manage Members</button>
-					<div class="nav dropdown-content">
-						<a href="addMember">Add New Member</a> <a
-							href="/uniqueFitness/updateMember">Update Member</a> <a
-							href="/uniqueFitness/allMembers">All Members</a> <a
-							href="/uniqueFitness/activeMembers">Active Members</a>
-					</div>
-				</div>
-				<div class="dropdown">
-					<button class="dropbtn" href="#home">Payment Status</button>
-					<div class="nav dropdown-content">
-						<a href="/uniqueFitness/pendingPayments">Pending Payments</a> <a
-							href="/uniqueFitness/modifyPayment">Modify Payment</a>
-					</div>
-				</div>
-				<div class="dropdown">
-					<button class="dropbtn" href="#home">
-						SMS Sending<i class="fa fa-caret-down"></i>
-					</button>
-					<div class="nav dropdown-content">
-						<a href="#">SMS/Email to Expired Members</a> <a href="#">SMS/Email
-							to upcoming expiration members</a> <a href="#">Link 3</a>
-					</div>
-				</div>
-				<div class="dropdown">
-					<button class="dropbtn" href="#home">
-						Reports Download<i class="fa fa-caret-down"></i>
-					</button>
-					<div class="nav dropdown-content">
-						<a href="/uniqueFitness/dwnldexml">Download Expired Members
-							List</a> <a href="/uniqueFitness/dwnldaml">Download Active
-							Members List</a> <a href="/uniqueFitness/dwnldppml">Download
-							Pending Payment Member List</a> <a href="/uniqueFitness/dwnldupml">Download
-							Upcoming Payment Member List</a>
-					</div>
-				</div>
-				<div class="myclass">
-					<div class="dropdown">
-						<button type="button" class="dropbtn">
-							<font color="white"><b><a href="/uniqueFitness/logout">Log
-										out</a></b></font>
-						</button>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="fluid_container">
-		<div class="container">
-		<header class="myh1"><h1>Member added with following details</h1></header>
+      <div id="logo" class="pull-left">
+        <h1><a href="#body" class="scrollto">Unique <span>Fitness</span></a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="#body"><img src="img/logo.png" alt="" title="" /></a>-->
+      </div>
+
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li class="menu-active"><a href="#">Home</a></li>
+          <li class="menu-has-children"><a href="#">Manage Members</a>
+            <ul>
+              <li><a href="addMember">Add Member</a></li>
+              <li><a href="updateMember">Update Member</a></li>
+              <li><a href="allMembers">All Members</a></li>
+              <li><a href="activeMembers">Active Members</a></li>
+              <li><a href="#">Search Members</a></li>
+            </ul>
+          </li>
+         <li class="menu-has-children"><a href="">Manage Payment</a>
+            <ul>
+              <li><a href="pendingPayments">Pending Payments</a></li>
+              <li><a href="updateMember">Modify Payment</a></li>
+              <li><a href="allMembers">Temp</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav><!-- #nav-menu-container -->
+    </div>
+  </header><!-- #header -->
+
+ 
+
+  <main id="main">
+
+   <div class="container">
+		<br><br><center><header class="myh1"><h3>Member added with following details</h3></header></center>
 		</div>
 		
 		<div id="w">
     <div id="content" class="clearfix">
-      <div id="userphoto"><img src="/uniqueFitness/resources/images/avatar.png" alt="default avatar"></div>
+      <div id="userphoto"><img src="data:image/jpg;base64,${image}" alt="default avatar"></div>
       
 
       <nav id="profiletabs">
         <ul class="clearfix">
-          <li><a href="#bio" class="sel">Bio</a></li>
-          <li><a href="#pkg">Package Details/History</a></li>
-          <li><a href="#pmt">Payment Details/History</a></li>
+          <li><a id="bioA" href="#" class="sel">Bio</a></li>
+          <li><a id="pkgA" href="#">Package Details/History</a></li>
+          <li><a id="pmtA" href="#t">Payment Details/History</a></li>
         </ul>
       </nav>
       
       <section id="bio">
-        	<br><br><br>
-        	<table>
-        		<tr><td>Registration Number :- ${member.id}</td></tr>
-        		<tr><td>Name :- ${member.name}</td></tr>
-        		<tr><td>Email :- ${member.email}</td></tr>
-        		<tr><td>Phone Number :- ${member.number}</td></tr>
-        		<tr><td>Birth Date :- ${member.dob}</td></tr>
-        		<tr><td>Age :- ${member.age}</td></tr>
-        		<tr><td>Gender :- ${member.gender}</td></tr>
-        		<tr><td>Address :- ${member.address}</td></tr>
-        		<tr><td>Gym Time :- ${member.gymTime}</td></tr>
-        		<tr><td>Status :- ${member.memberStatus}</td></tr>
+        	<table class="rwd-table">
+        		<tr><th>Registration Number :- </th><td>${member.id}</td></tr>
+        		<tr><th>Name :- </th><td>${member.name}</td></tr>
+        		<tr><th>Email :- </th><td>${member.email}</td></tr>
+        		<tr><th>Phone Number :- </th><td>${member.number}</td></tr>
+        		<tr><th>Birth Date :- </th><td>${member.dob}</td></tr>
+        		<tr><th>Age :- </th><td>${member.age}</td></tr>
+        		<tr><th>Gender :- </th><td>${member.gender}</td></tr>
+        		<tr><th>Address :- </th><td>${member.address}</td></tr>
+        		<tr><th>Gym Time :- </th><td>${member.gymTime}</td></tr>
+        		<tr><th>Status :- </th><td>${member.memberStatus}</td></tr>
         	</table>
         	
       </section>
       
       <section id="pkg" class="hidden">
-      <br><br><br>
-        	<table>
-        		<tr><td>Package :- ${member.pkgId}</td></tr>
-        		<tr><td>Package Start Date :- ${member.pkgStartDate}</td></tr>
-        		<tr><td>Package End Date :- ${member.pkgEndDate}</td></tr>
-        		<tr><td>Package Amount :- ${member.pkgAmt}</td></tr>
+        	<table class="rwd-table">
+        		<tr><th>Package :- </th><td>${member.pkgId}</td></tr>
+        		<tr><th>Package Start Date :- </th><td>${member.pkgStartDate}</td></tr>
+        		<tr><th>Package End Date :- </th><td>${member.pkgEndDate}</td></tr>
+        		<tr><th>Package Amount :- </th><td>${member.pkgAmt}</td></tr>
         	</table>
       </section>
       
       <section id="pmt" class="hidden">
-      <br><br><br>
-       <table>
-        		<tr><td>Paid Amount :- ${member.paidAmount}</td></tr>
-        		<tr><td>Pending Amount :- ${member.pendingAmount}</td></tr>
-        		<tr><td>Payment Date :- ${member.paymentDate}</td></tr>
-        		<tr><td>Payment due Date :- ${member.dueDate}</td></tr>
-        		<tr><td>Payment Status :- ${member.paymentStatus}</td></tr>
-        	</table>
+       <table class="rwd-table">
+        		<tr><th>Paid Amount :- </th><td>${member.paidAmount}</td></tr>
+        		<tr><th>Pending Amount :- </th><td>${member.pendingAmount}</td></tr>
+        		<tr><th>Payment Date :- </th><td>${member.paymentDate}</td></tr>
+        		<tr><th>Payment due Date :- </th><td>${member.dueDate}</td></tr>
+        		<tr><th>Payment Status :- </th><td>${member.paymentStatus}</td></tr>
+        </table>
       
-     
+</section>     
     </div>
   </div>
-		
-		
-		
-		
-	</div>
-	<div class="clear"></div>
-	<div class="ftr-bg">
-		<div class="wrap">
-			<div class="footer">
-				<div class="social-icons">
-					<ul>
-						<li class="facebook"></li>
-						<li class="twitter"></li>
-						<li class="googleplus"></li>
-						<li class="contact"></li>
-						<div class="clear"></div>
-					</ul>
-				</div>
-				<div class="copy">
-					<p>
-					<h4>© 2018 Unique Fitness . All Rights Reserved | Design by
-						Vishal Patil</h4>
-					</p>
-				</div>
-				<div class="clear"></div>
-			</div>
-		</div>
-	</div>
-	<script>
+
+  </main>
+
+  <!--==========================
+    Footer
+  ============================-->
+  <footer id="footer">
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong>Unique Fitness.</strong>. All Rights Reserved
+      </div>
+     
+    </div>
+  </footer><!-- #footer -->
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+  <!-- JavaScript Libraries -->
+  <script src="/uniqueFitness/resources/lib/jquery/jquery.min.js"></script>
+  <script src="/uniqueFitness/resources/lib/jquery/jquery-migrate.min.js"></script>
+  <script src="/uniqueFitness/resources/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/uniqueFitness/resources/lib/easing/easing.min.js"></script>
+  <script src="/uniqueFitness/resources/lib/superfish/hoverIntent.js"></script>
+  <script src="/uniqueFitness/resources/lib/superfish/superfish.min.js"></script>
+  <script src="/uniqueFitness/resources/lib/wow/wow.min.js"></script>
+  <script src="/uniqueFitness/resources/lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="/uniqueFitness/resources/lib/magnific-popup/magnific-popup.min.js"></script>
+  <script src="/uniqueFitness/resources/lib/sticky/sticky.js"></script>
+  <script src="/uniqueFitness/resources/js/main.js"></script>
+<script>
 $(document).ready(function(){
-	
-	$(function(){
-		  $('#profiletabs ul li a').on('click', function(e){
-		    e.preventDefault();
-		    var newcontent = $(this).attr('href');
-		    
-		    $('#profiletabs ul li a').removeClass('sel');
-		    $(this).addClass('sel');
-		    
-		    $('#content section').each(function(){
-		      if(!$(this).hasClass('hidden')) { $(this).addClass('hidden'); }
-		    });
-		    
-		    $(newcontent).removeClass('hidden');
-		  });
-		});
+	$("#pkgA").click(function(){
+		$("#bio").hide();
+		$("#pmt").hide();
+		$("#pkg").show();
+		$("#bioA").removeClass("sel");
+		$("#pmtA").removeClass("sel");
+		$("#pkgA").addClass("sel");
+	});
+	$("#pmtA").click(function(){
+		$("#bio").hide();
+		$("#pmt").show();
+		$("#pkg").hide();
+		$("#bioA").removeClass("sel");
+		$("#pkgA").removeClass("sel");
+		$("#pmtA").addClass("sel");
+	});
+	$("#bioA").click(function(){
+		$("#bio").show();
+		$("#pmt").hide();
+		$("#pkg").hide();
+		$("#pkgA").removeClass("sel");
+		$("#pmtA").removeClass("sel");
+		$("#bioA").addClass("sel");
+	});
 });
 </script>
 </body>

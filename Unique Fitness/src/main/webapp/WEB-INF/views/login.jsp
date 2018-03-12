@@ -19,15 +19,7 @@
 </head>
 
 <body>
-	<div class="h_bg">
-		<div class="wrap">
-			<div class="logo">
-				<h1>
-					<a href="login"><img src="/uniqueFitness/resources/images/logo.png" alt=""></a>
-				</h1>
-			</div>
-		</div>
-	</div>
+	
 	
 	<div class="fluid_container">
 		<div class="limiter">

@@ -4,7 +4,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 public class Member {
 		
-		private int id;
+		private String id;
 		private int paymentId;
 		private String name;
 		private String email;
@@ -36,10 +36,10 @@ public class Member {
 		public void setRegDate(String regDate) {
 			this.regDate = regDate;
 		}
-		public int getId() {
+		public String getId() {
 			return id;
 		}
-		public void setId(int id) {
+		public void setId(String id) {
 			this.id = id;
 		}
 		public int getPaymentId() {
