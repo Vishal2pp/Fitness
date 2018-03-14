@@ -52,21 +52,30 @@ table {
 
       <nav id="nav-menu-container">
         <ul class="nav-menu">
-          <li class="menu-active"><a href="home">Home</a></li>
+          <li><a href="home">Home</a></li>
           <li class="menu-has-children"><a href="">Manage Members</a>
             <ul>
-              <li><a href="addMember">Add Member</a></li>
-              <li><a href="updateMember">Update Member</a></li>
+              <li class="menu-active"><a href="addMember">Add Member</a></li>
+              <li><a href="updateMember">Update Member Bio</a></li>
               <li><a href="allMembers">All Members</a></li>
               <li><a href="activeMembers">Active Members</a></li>
-              <li><a href="#">Search Members</a></li>
+              <li><a href="deactiveMembers">Deactive Members</a></li>
+              <li><a href="expiredMembers">Expired Members</a></li>
+              <li><a href="#">Renew Member</a></li>
             </ul>
           </li>
-         <li class="menu-has-children"><a href="">Manage Payment</a>
+         <li class="menu-has-children"><a href="#">Manage Payment</a>
             <ul>
               <li><a href="pendingPayments">Pending Payments</a></li>
               <li><a href="updateMember">Modify Payment</a></li>
               <li><a href="allMembers">Temp</a></li>
+            </ul>
+          </li>
+          <li class="menu-has-children"><a href="#">Package Manager</a>
+            <ul>
+              <li><a href="pendingPayments">Add Package</a></li>
+              <li><a href="updateMember">Modify Package</a></li>
+              <li><a href="allMembers">View Packages</a></li>
             </ul>
           </li>
         </ul>
@@ -89,37 +98,37 @@ table {
 			<table cellspacing="10">
 					<tr>
 						<td>Name-</td>
-						<td><input name="name" placeholder="Full Name" size="50" tabindex="1" type="text"></td>
+						<td><br><input name="name" placeholder="Full Name" size="50" tabindex="1" type="text"></td>
 					</tr>
 					
 					<tr>
 						<td>Email-</td>
-						<td><input name="email" placeholder="example@domain.com" size="50" tabindex ="2" type="email"/></td>
+						<td><br><input name="email" placeholder="example@domain.com" size="50" tabindex ="2" type="email"/></td>
 					</tr>
 					
 					
 					<tr>
 						<td>Phone Number-</td>
-						<td><input name="number" placeholder="Phone Number" tabindex="3" type="number"/></td>
+						<td><br><input name="number" placeholder="Phone Number" tabindex="3" type="number"/></td>
 					</tr>
 
 					<tr>
 						<td>Birthdate-</td>
-						<td><input type="date" name="dob" tabindex="4" /></td>
+						<td><br><input type="date" name="dob" tabindex="4" /></td>
 					</tr>
 					
 					<tr>
 						<td>Age-</td>
-						<td><input type="number" name="age" tabindex="5"/></td>
+						<td><br><input type="number" name="age" tabindex="5"/></td>
 					</tr>
 					<tr>
 						<td>Photo-</td>
-						<td><input type="file" name="file" tabindex="6"/></td>
+						<td><br><input type="file" name="file" tabindex="6"/></td>
 					</tr>
 					
 					<tr>
 						<td>Address- </td>
-						<td><textarea rows="2" cols="40" name="address" tabindex="7"></textarea></td>
+						<td><br><textarea rows="2" cols="40" name="address" tabindex="7"></textarea></td>
 					</tr>
 					<tr>
 						<td>Gender-</td>
@@ -143,49 +152,49 @@ table {
 								<option value="${pkg.pkgId}" id="${pkg.pkgAmount}">${pkg.pkgName}
 									-- ${pkg.pkgAmount} Rs.</option>
 								</c:forEach>
-							</select>
+							</select><br>
 						</td>
 					</tr>
 					<tr>
 						<td>Package Start Date-</td>
-						<td><input type="date" name="pkgStartDate" tabindex="10"/></td>
+						<td><br><input type="date" name="pkgStartDate" tabindex="10"/></td>
 					</tr>
 					
 					<tr>
 						<td>Package End Date-</td>
-						<td><input type="date" name="pkgEndDate" tabindex="11" /></td>
+						<td><br><input type="date" name="pkgEndDate" tabindex="11" /></td>
 					</tr>
 					<tr>
 						<td>Package Amount</td>
-						<td><input id="pkgAmt" name="pkgAmt" type="text" readonly="readonly" value="0"></td>
+						<td><br><input id="pkgAmt" name="pkgAmt" type="text" readonly="readonly" value="0"></td>
 					</tr>
 					
 					<tr>
 						<td>Paid Amount</td>
-						<td><input id="paid" name="paidAmount" type="text" value="0" tabindex="12"></td>
+						<td><br><input id="paid" name="paidAmount" type="text" value="0" tabindex="12"></td>
 					</tr>
 					
 						<tr>
 						<td>Pending Amount</td>
-						<td><input id="pending" name="pendingAmount" type="text" value="0" readonly="readonly"> </td>
+						<td><br><input id="pending" name="pendingAmount" type="text" value="0" readonly="readonly"> </td>
 						</tr>
 					<tr>
 						<td>Payment Receipt No.-</td>
-						<td><input type="text" name="receiptNo" tabindex="13"/></td>
+						<td><br><input type="text" name="receiptNo" tabindex="13"/></td>
 					</tr>
 					
 					<tr>
 						<td>Payment Date-</td>
-						<td><input type="date" name="paymentDate" tabindex="14"/></td>
+						<td><br><input type="date" name="paymentDate" tabindex="14"/></td>
 					</tr>
 					
 					<tr>
 						<td>Payment Due Date-</td>
-						<td><input type="date" name="dueDate" tabindex="15"/></td>
+						<td><br><input type="date" name="dueDate" tabindex="15"/></td>
 					</tr>
 					<tr>
 						<td>Gym Time-</td>
-						<td><input type="text" name="gymTime" tabindex="16"/></td>
+						<td><br><input type="text" name="gymTime" tabindex="16"/></td>
 					</tr>
 					
 					

@@ -48,21 +48,30 @@
 
       <nav id="nav-menu-container">
         <ul class="nav-menu">
-          <li class="menu-active"><a href="#">Home</a></li>
+          <li class="menu-active"><a href="home">Home</a></li>
           <li class="menu-has-children"><a href="#">Manage Members</a>
             <ul>
               <li><a href="addMember">Add Member</a></li>
               <li><a href="updateMember">Update Member</a></li>
               <li><a href="allMembers">All Members</a></li>
               <li><a href="activeMembers">Active Members</a></li>
-              <li><a href="#">Search Members</a></li>
+             <li><a href="deactiveMembers">Deactive Members</a></li>
+              <li><a href="expiredMembers">Expired Members</a></li>
+              <li><a href="#">Renew Member</a></li>
             </ul>
           </li>
-         <li class="menu-has-children"><a href="">Manage Payment</a>
+         <li class="menu-has-children"><a href="#">Manage Payment</a>
             <ul>
               <li><a href="pendingPayments">Pending Payments</a></li>
               <li><a href="updateMember">Modify Payment</a></li>
               <li><a href="allMembers">Temp</a></li>
+            </ul>
+          </li>
+          <li class="menu-has-children"><a href="#">Package Manager</a>
+            <ul>
+              <li><a href="pendingPayments">Add Package</a></li>
+              <li><a href="updateMember">Modify Package</a></li>
+              <li><a href="allMembers">View Packages</a></li>
             </ul>
           </li>
         </ul>
@@ -75,7 +84,7 @@
   <main id="main">
 
    <div class="container">
-		<br><br><center><header class="myh1"><h3>Member added with following details</h3></header></center>
+		<center><header class="myh1"><h3>Member added with following details</h3></header></center>
 		</div>
 		
 		<div id="w">
@@ -107,7 +116,7 @@
         	
       </section>
       
-      <section id="pkg" class="hidden">
+      <section id="pkg" style="display: none;">
         	<table class="rwd-table">
         		<tr><th>Package :- </th><td>${member.pkgId}</td></tr>
         		<tr><th>Package Start Date :- </th><td>${member.pkgStartDate}</td></tr>
@@ -116,7 +125,7 @@
         	</table>
       </section>
       
-      <section id="pmt" class="hidden">
+      <section id="pmt" style="display: none;">
        <table class="rwd-table">
         		<tr><th>Paid Amount :- </th><td>${member.paidAmount}</td></tr>
         		<tr><th>Pending Amount :- </th><td>${member.pendingAmount}</td></tr>

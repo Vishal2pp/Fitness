@@ -5,7 +5,7 @@
 <html>
 
 <head>
-<title>All Members</title>
+<title>Deactive Members</title>
 
 
   <!-- Google Fonts -->
@@ -51,13 +51,13 @@
       <nav id="nav-menu-container">
         <ul class="nav-menu">
           <li><a href="home">Home</a></li>
-          <li class="menu-has-children"><a href="#">Manage Members</a>
+          <li class="menu-has-children menu-active"><a href="#">Manage Members</a>
             <ul>
               <li><a href="addMember">Add Member</a></li>
               <li><a href="updateMember">Update Member Bio</a></li>
-              <li class="menu-active"><a href="allMembers">All Members</a></li>
+              <li><a href="allMembers">All Members</a></li>
               <li><a href="activeMembers">Active Members</a></li>
-              <li><a href="deactiveMembers">Deactive Members</a></li>
+              <li class="menu-active"><a href="deactiveMembers">Deactive Members</a></li>
               <li><a href="expiredMembers">Expired Members</a></li>
               <li><a href="#">Renew Member</a></li>
             </ul>
@@ -228,8 +228,222 @@
   function clickedMe(id){
   	//alert(id);
   	var modal = $('.modal-body');
-  	var str = '';
+  	var str = '<div class="container-fluid">\
+  	   			 <div class="row">\
+    				<div class="col-md-4">.col-md-4</div>\
+	    			<div class="col-md-4 col-md-offset-4">.col-md-4 .col-md-offset-4</div>\
+	  			</div>\
+	  			<div class="row">\
+				    <div class="col-md-3 col-md-offset-3">.col-md-3 .col-md-offset-3</div>\
+				    <div class="col-md-2 col-md-offset-4">.col-md-2 .col-md-offset-4</div>\
+			  	</div>\
+			  	<div class="row">\
+			    	<div class="col-md-6 col-md-offset-3">.col-md-6 .col-md-offset-3</div>\
+			  	</div>\
+	  			<div class="row">\
+	    			<div class="col-sm-9">\
+	      				Level 1: .col-sm-9\
+			   			<div class="row">\
+			    			<div class="col-8 col-sm-6">\
+	          					Level 2: .col-8 .col-sm-6\
+	        				</div>\
+	        				<div class="col-4 col-sm-6">\
+	          					Level 2: .col-4 .col-sm-6\
+	        				</div>\
+	      				</div>\
+	    			</div>\
+	  			</div>\
+			</div>';
   }
   </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<%-- <%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="java.util.List"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+<title>Unique Fitness</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1">
+<link href='//fonts.googleapis.com/css?family=Sofia' rel='stylesheet'
+	type='text/css'>
+
+<link href="/uniqueFitness/resources/css/style.css" rel="stylesheet"
+	type="text/css" media="all" />
+<link rel="stylesheet" type="text/css"
+	href="/uniqueFitness/resources/css/util.css">
+<link rel="stylesheet" type="text/css"
+	href="/uniqueFitness/resources/css/main.css">
+<!--slider-->
+<link href="/uniqueFitness/resources/css/camera.css" rel="stylesheet"
+	type="text/css" media="all" />
+	<link href="/uniqueFitness/resources/css/allMemberTable.css" rel="stylesheet"
+	type="text/css" media="all" />
+<script type='text/javascript'
+	src="/uniqueFitness/resources/js/jquery.min.js"></script>
+<script type='text/javascript'
+	src="/uniqueFitness/resources/js/jquery.easing.1.3.js"></script>
+<script type='text/javascript'
+	src="/uniqueFitness/resources/js/camera.min.js"></script>
+
+<style type="text/css">
+.myclass {
+	margine-top: 4px;
+	float: right;
+}
+</style>
+</head>
+
+<body>
+	<div class="h_bg">
+		<div class="wrap">
+			<div class="logo">
+				<h1>
+					<a href="/uniqueFitness/login"><img
+						src="/uniqueFitness/resources/images/logo.png" alt=""></a>
+				</h1>
+			</div>
+		</div>
+	</div>
+
+	<div class="navbar nav_bg">
+		<div class="wrap">
+			<div class="menu">
+				<div class="dropdown">
+					<button class="dropbtn active" href="#home">Manage Members</button>
+					<div class="nav dropdown-content">
+						<a href="/uniqueFitness/addMember">Add New Member</a> <a
+							href="/uniqueFitness/updateMember">Update Member</a> <a
+							href="/uniqueFitness/allMembers">All Members</a> <a
+							href="/uniqueFitness/activeMembers">Active Members</a>
+					</div>
+				</div>
+				<div class="dropdown">
+					<button class="dropbtn" href="#home">Payment Status</button>
+					<div class="nav dropdown-content">
+						<a href="/uniqueFitness/pendingPayments">Pending Payments</a> <a
+							href="/uniqueFitness/modifyPayment">Modify Payment</a>
+					</div>
+				</div>
+				<div class="dropdown">
+					<button class="dropbtn" href="#home">
+						SMS Sending<i class="fa fa-caret-down"></i>
+					</button>
+					<div class="nav dropdown-content">
+						<a href="#">SMS/Email to Expired Members</a> <a href="#">SMS/Email
+							to upcoming expiration members</a> <a href="#">Link 3</a>
+					</div>
+				</div>
+				<div class="dropdown">
+					<button class="dropbtn" href="#home">
+						Reports Download<i class="fa fa-caret-down"></i>
+					</button>
+					<div class="nav dropdown-content">
+						<a href="/uniqueFitness/dwnldexml">Download Expired Members
+							List</a> <a href="/uniqueFitness/dwnldaml">Download Active
+							Members List</a> <a href="/uniqueFitness/dwnldppml">Download
+							Pending Payment Member List</a> <a href="/uniqueFitness/dwnldupml">Download
+							Upcoming Payment Member List</a>
+					</div>
+				</div>
+				<div class="myclass">
+					<div class="dropdown">
+						<button type="button" class="dropbtn">
+							<font color="white"><b><a href="/uniqueFitness/logout">Log
+										out</a></b></font>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="fluid_container">
+
+<table border="1">
+  <tr>
+  	<th>Registration NO.</th>
+  	<th>Name</th>
+  	<th>Age</th>
+  	<th>Email</th>
+  	<th>Number</th>
+  	<th>Birthdate</th>
+  	<th>Registration Date</th>
+  	<th>Status</th>
+  	<th>Photo</th>
+  </tr>
+  <c:forEach items="${data}" var="member">
+  <tr>
+  <td>${member.id}</td>
+  <td>${member.name}</td>
+  <td>${member.age}</td>
+  <td>${member.email}</td>
+  <td>${member.number}</td>
+  <td>${member.dob}</td>
+  <td>${member.regDate}</td>
+  <td>${member.memberStatus}</td>
+  <td><img src="data:image/jpg;base64,${member.imagePath}" height="50px" width="50px"/></td>
+  </tr>
+  </c:forEach>
+</table>
+
+
+	</div>
+	<div class="clear"></div>
+	<div class="ftr-bg">
+		<div class="wrap">
+			<div class="footer">
+				<div class="social-icons">
+					<ul>
+						<li class="facebook"></li>
+						<li class="twitter"></li>
+						<li class="googleplus"></li>
+						<li class="contact"></li>
+						<div class="clear"></div>
+					</ul>
+				</div>
+				<div class="copy">
+					<p>
+					<h4>© 2018 Unique Fitness . All Rights Reserved | Design by
+						Vishal Patil</h4>
+					</p>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html> --%>

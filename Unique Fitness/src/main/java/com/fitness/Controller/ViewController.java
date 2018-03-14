@@ -41,15 +41,7 @@ public class ViewController {
 		model.addAttribute("pkgData", pkgService.getAllPkgs());
 		return "addMember";
 	}
-	@RequestMapping(value = "/updateMember", method = RequestMethod.GET)
-	public String updateM() {
-		return "updateMember";
-	}
 	
-	@RequestMapping(value = "/activeMembers", method = RequestMethod.GET)
-	public String activeM() {
-		return "activeMembers";
-	}
 	@RequestMapping(value = "/pendingPayments", method = RequestMethod.GET)
 	public String pendingPay() {
 		return "pendingPayments";

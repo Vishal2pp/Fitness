@@ -4,10 +4,14 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.List;
 
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.ResultSetExtractor;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -16,6 +20,7 @@ import org.springframework.ui.ModelMap;
 import com.fitness.Controller.ViewController;
 import com.fitness.Model.AllMembers;
 import com.fitness.Model.Member;
+import com.fitness.Model.UpdateMember;
 
 @Repository
 public class MemberDaoImpl implements MemberDao{
@@ -126,5 +131,122 @@ public class MemberDaoImpl implements MemberDao{
 					return m;
 			}
 		});
+	}
+	@Override
+	public List<AllMembers> getActiveMembers(ModelMap model) {
+		return template.query("select * from users where users.mStatus = 'Active'", new RowMapper<AllMembers>() {
+
+			@Override
+			public AllMembers mapRow(ResultSet rs, int rowNum) throws SQLException {
+					AllMembers m = new AllMembers();
+					m.setId(rs.getString(1));
+					m.setName(rs.getString(6));
+					m.setAge(rs.getInt(7));
+					m.setEmail(rs.getString(8));
+					//m.setGender(rs.getString(9));
+					//m.setAddress(rs.getString(10));
+					m.setNumber(rs.getLong(11));
+					m.setDob(rs.getString(12));
+					m.setImagePath(ViewController.getImageBytes(rs.getString(13)));
+					m.setMemberStatus(rs.getString(15));
+					m.setRegDate(rs.getString(16));
+					return m;
+			}
+		});
+	}
+	@Override
+	public List<AllMembers> getExpiredMembers(ModelMap model) {
+		return template.query("select * from users where users.mStatus = 'Expired'", new RowMapper<AllMembers>() {
+
+			@Override
+			public AllMembers mapRow(ResultSet rs, int rowNum) throws SQLException {
+					AllMembers m = new AllMembers();
+					m.setId(rs.getString(1));
+					m.setName(rs.getString(6));
+					m.setAge(rs.getInt(7));
+					m.setEmail(rs.getString(8));
+					//m.setGender(rs.getString(9));
+					//m.setAddress(rs.getString(10));
+					m.setNumber(rs.getLong(11));
+					m.setDob(rs.getString(12));
+					m.setImagePath(ViewController.getImageBytes(rs.getString(13)));
+					m.setMemberStatus(rs.getString(15));
+					m.setRegDate(rs.getString(16));
+					return m;
+			}
+		});
+	}
+	@Override
+	public List<AllMembers> getDeActiveMembers(ModelMap model) {
+		return template.query("select * from users where users.mStatus = 'Deactive'", new RowMapper<AllMembers>() {
+
+			@Override
+			public AllMembers mapRow(ResultSet rs, int rowNum) throws SQLException {
+					AllMembers m = new AllMembers();
+					m.setId(rs.getString(1));
+					m.setName(rs.getString(6));
+					m.setAge(rs.getInt(7));
+					m.setEmail(rs.getString(8));
+					//m.setGender(rs.getString(9));
+					//m.setAddress(rs.getString(10));
+					m.setNumber(rs.getLong(11));
+					m.setDob(rs.getString(12));
+					m.setImagePath(ViewController.getImageBytes(rs.getString(13)));
+					m.setMemberStatus(rs.getString(15));
+					m.setRegDate(rs.getString(16));
+					return m;
+			}
+		});
+	}
+	@Override
+	public String getMember(String id) {
+		List<UpdateMember> list = template.query("select * from users where regId='"+id+"'", new ResultSetExtractor<List<UpdateMember>>() {
+
+			@Override
+			public List<UpdateMember> extractData(ResultSet rs) throws SQLException, DataAccessException {
+				List<UpdateMember> list=new ArrayList<UpdateMember>();  
+			        while(rs.next()){  
+			        	UpdateMember m = new UpdateMember();
+			        	m.setId(rs.getString(1));
+			        	m.setAddress(rs.getString(10));
+			        	m.setAge(rs.getInt(7));
+			        	m.setDob(rs.getString(12));
+			        	m.setEmail(rs.getString(8));
+			        	m.setGender(rs.getString(9));
+			        	m.setName(rs.getString(6));
+			        	m.setNumber(rs.getLong(11));
+			        	m.setMemberStatus(rs.getString(15));
+			        	list.add(m);
+			        }  
+			        return list;  
+			}
+		});
+		JSONObject data = new JSONObject();
+		try {
+		for(UpdateMember m : list) {
+			System.out.println("Name-"+m.getName());
+			data.put("name", m.getName());
+			data.put("age",m.getAge());
+			data.put("id",m.getId());
+			data.put("gender",m.getGender());
+			data.put("no",m.getNumber());
+			data.put("address",m.getAddress());
+			data.put("status",m.getMemberStatus());
+			data.put("email",m.getEmail());
+			data.put("dob",m.getDob());
+		}
+		
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return data.toString();
+	}
+	@Override
+	public boolean updateMember(UpdateMember member, ModelMap model) {
+		
+		String query = "update users set mName='"+member.getName()+"',mAge="+member.getAge()+",mEmail='"+member.getEmail()+"',mPhone='"+member.getNumber()+"'"
+				+ ",mSex='"+member.getGender()+"',mStatus='"+member.getMemberStatus()+"',mDob='"+member.getDob()+"',mAddress='"+member.getAddress()+"' where regId='"+member.getId()+"'";
+		int status = template.update(query);
+		return status > 0 ;
 	}
 }

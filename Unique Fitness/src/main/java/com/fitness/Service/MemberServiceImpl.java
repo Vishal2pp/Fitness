@@ -13,6 +13,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.fitness.Model.AllMembers;
 import com.fitness.Model.Member;
+import com.fitness.Model.UpdateMember;
 import com.fitness.dao.MemberDao;
 
 @Service
@@ -90,5 +91,25 @@ public class MemberServiceImpl implements MemberService{
 	@Override
 	public List<AllMembers> getAllMembers(ModelMap model) {
 		return memberDao.getAllMembers(model);
+	}
+	@Override
+	public List<AllMembers> getActiveMembers(ModelMap model) {
+		return memberDao.getActiveMembers(model);
+	}
+	@Override
+	public List<AllMembers> getExpiredMembers(ModelMap model) {
+		return memberDao.getExpiredMembers(model);
+	}
+	@Override
+	public List<AllMembers> getDeActivedMembers(ModelMap model) {
+		return memberDao.getDeActiveMembers(model);
+	}
+	@Override
+	public String getMember(String id) {
+		return memberDao.getMember(id);
+	}
+	@Override
+	public boolean updateMember(UpdateMember member, ModelMap model) {
+		return memberDao.updateMember(member, model);
 	}
 }

@@ -5,7 +5,7 @@
 <html>
 
 <head>
-<title>Update Members</title>
+<title>Expired Members</title>
 
 
   <!-- Google Fonts -->
@@ -23,7 +23,7 @@
   <link href="/uniqueFitness/resources/lib/magnific-popup/magnific-popup.css" rel="stylesheet">
   <link href="/uniqueFitness/resources/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
     <link href="/uniqueFitness/resources/css/dataTables.bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="/uniqueFitness/resources/css/style1.css">
+
   <!-- Main Stylesheet File -->
   <link href="/uniqueFitness/resources/css/style.css" rel="stylesheet">
 
@@ -51,18 +51,18 @@
       <nav id="nav-menu-container">
         <ul class="nav-menu">
           <li><a href="home">Home</a></li>
-          <li class="menu-has-children"><a href="#">Manage Members</a>
+          <li class="menu-has-children menu-active"><a href="#">Manage Members</a>
             <ul>
               <li><a href="addMember">Add Member</a></li>
               <li><a href="updateMember">Update Member Bio</a></li>
-              <li class="menu-active"><a href="allMembers">All Members</a></li>
+              <li><a href="allMembers">All Members</a></li>
               <li><a href="activeMembers">Active Members</a></li>
               <li><a href="deactiveMembers">Deactive Members</a></li>
-              <li><a href="expiredMembers">Expired Members</a></li>
+              <li class="menu-active"><a href="expiredMembers">Expired Members</a></li>
               <li><a href="#">Renew Member</a></li>
             </ul>
           </li>
-         <li class="menu-has-children"><a href="#">Manage Payment</a>
+         <li class="menu-has-children"><a href="">Manage Payment</a>
             <ul>
               <li><a href="pendingPayments">Pending Payments</a></li>
               <li><a href="updateMember">Modify Payment</a></li>
@@ -102,17 +102,7 @@
   </thead>
   <tbody>
   <c:forEach items="${data}" var="member">
-  <c:choose>
-    <c:when test="${member.memberStatus=='Deactive'}">
-          <tr style="background-color:#f35b5b6b;">
-    </c:when>  
-    <c:when test="${member.memberStatus=='Expired'}">
-          <tr style="background-color:#FF6347;">
-    </c:when>   
-    <c:otherwise>
-        <tr>
-    </c:otherwise>
-</c:choose>
+  <tr>
   <td>${member.id}</td>
   <td>${member.name}</td>
   <td>${member.age}</td>
@@ -122,7 +112,7 @@
   <td>${member.regDate}</td>
   <td>${member.memberStatus}</td>
   <td><img src="data:image/jpg;base64,${member.imagePath}" height="50px" width="50px"/></td>
-  <td><button type="button" class="btn btn-info" id="${member.id}" data-toggle="modal" data-target="#myModal" onclick="updateMe('${member.id}')">Update</button></td>
+  <td><button type="button" class="btn btn-info" id="${member.id}" data-toggle="modal" data-target="#myModal" onclick="clickedMe('${member.id}')">Details</button></td>
   </tr>
   </c:forEach>
   <tbody>
@@ -142,10 +132,52 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h2 class="modal-title text-center"><span class="label label-success">Update Member</span></h2>
+          <h2 class="modal-title text-center"><span class="label label-success">Member Details</span></h2>
         </div>
         <div class="modal-body">
-         
+          <div class="container-fluid">
+  	   			 <div class="row">
+    				<div class="col-md-4"><span class="label label-default">Name-</span></div>
+    				<div class="col-md-3"><span class="label label-default">Registration No-</span></div>
+    				<div class="col-md-3"><span class="label label-default">Reg. Date-</span></div>
+	    			<div class="col-md-2"><span class="pull-right"><img height="100px" width="100px"/></span></div>
+	  			</div>
+	  			<div class="row"><br></div>
+	  			<div class="row"><h3 class="modal-title text-center"><span class="label label-info">Package & Payment Details</span></h3></div>
+	  			<div class="row"><br></div>
+	  			<div class="row">
+				    <div class="col-md-4"><span class="label label-default">Package-</span></div>
+				    <div class="col-md-4"><span class="label label-default">Package Amount-</span></div>
+				    <div class="col-md-4"><span class="label label-default">Paid Amount-</span></div><br><br>
+			  	</div>
+			  	<div class="row">
+				    <div class="col-md-4"><span class="label label-default">Start Date-</span></div>
+				    <div class="col-md-4"><span class="label label-default">Pending Amount-</span></div>
+				    <div class="col-md-4"><span class="label label-default">Payment Date-</span></div>
+				    <br><br>
+			  	</div>
+			  	<div class="row">
+				    <div class="col-md-4"><span class="label label-default">End Date-</span></div>
+				    <div class="col-md-4"><span class="label label-default">Due Date-</span></div><br><br>
+			  	</div>
+			  	
+			  	<div class="row">
+			    	<div class="col-md-6 col-md-offset-3">.col-md-6 .col-md-offset-3</div>
+			  	</div>
+	  			<div class="row">
+	    			<div class="col-sm-9">
+	      				Level 1: .col-sm-9
+			   			<div class="row">
+			    			<div class="col-8 col-sm-6">
+	          					Level 2: .col-8 .col-sm-6
+	        				</div>
+	        				<div class="col-4 col-sm-6">
+	          					Level 2: .col-4 .col-sm-6
+	        				</div>
+	      				</div>
+	    			</div>
+	  			</div>
+			</div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -191,91 +223,37 @@
  <script type="text/javascript">
   $(document).ready(function() {
     $('#data').DataTable();
-   
 } );
- 
-  function updateMe(id){
-  	$.post('getMember', { mid: ""+id+""}, 
-  		function(data1){
-  			var data = JSON.parse(data1);
-  			console.log(data);
-  			var modal = $('.modal-body');
-  	  		var str = '	<div class="form">\
-  					<form id="updateForm" action="updateMemberData" method="POST">\
-  						<input type="text" name="id" value="'+data.id+'" hidden>\
-  						<table cellspacing="10">\
-  							<tr>\
-  								<td>Name-</td>\
-  								<td><br><input name="name" value="'+data.name+'" size="50" tabindex="1" type="text"></td>\
-  							</tr><br>\
-  							<tr>\
-  								<td>Email-</td>\
-  								<td><br><input name="email" value="'+data.email+'" size="50" tabindex ="2" type="email"/></td>\
-  							</tr>\
-  							<tr>\
-  								<td>Phone Number-</td>\
-  								<td><br><input name="number" value="'+data.no+'" tabindex="3" type="number"/></td>\
-  							</tr>\
-  							<tr>\
-  								<td>Birthdate-</td>\
-  								<td><br><input type="date" name="dob" value="'+data.dob+'"tabindex="4" /></td>\
-  							</tr>\
-  							<tr>\
-  								<td>Age-</td>\
-  								<td><br><input type="number" name="age" value="'+data.age+'" tabindex="5"/></td>\
-  							</tr>\
-  							<tr>\
-  								<td>Address- </td>\
-  								<td><br><textarea rows="2" cols="40" name="address" tabindex="7">'+data.address+'</textarea></td>\
-  							</tr>\
-  							<tr>\
-  								<td>Gender-</td>\
-  								<td>\
-  									<select class="select-style gender" name="gender" tabindex="8">\
-  										<option value="'+data.gender+'">'+data.gender+'</option>\
-  										<option value="Male">Male</option>\
-  										<option value="Female">Female</option>\
-  										<option value="Other">Other</option>\
-  									</select>\
-  								</td>	\
-  							</tr>\
-  							<tr>\
-  								<td>Status-</td>\
-  								<td>\
-  									<select class="select-style gender" name="memberStatus" tabindex="8">\
-  										<option value="'+data.status+'">'+data.status+'</option>\
-  										<option value="Active">Active</option>\
-  										<option value="Deactive">Deactive</option>\
-  										<option value="Expired">Expired</option>\
-  									</select>\
-  								</td>	\
-  							</tr>\
-  							<tr><td><br><br></td></tr>\
-  							<tr><td></td><td><input class="btn btn-lg" name="submit" id="submit" tabindex="17" value="Update" type="submit"></td></tr>\
-  						</table></form>\
-  					</div>';
-  					modal.html(str);
-  					 
-  					$("#updateForm").submit(function(e) {
-  				        e.preventDefault(); // avoid to execute the actual submit of the form.
-  				        $.ajax({
-  				               type: "POST",
-  				               url: "updateMemberData",
-  				               data: $("#updateForm").serialize(),
-  				               success: function(data)
-  				               {
-  				                   if(data === "DONE"){
-  				                	 alert("Member Updated!!");
-  				                	location.reload();
-  				                   }else{
-  				                	   alert("Failed to update!!");
-  				                   }
-  				                		
-  				                	
-  				               }
-  				             }); 
-  				    });
-  		});
+  
+  function clickedMe(id){
+  	//alert(id);
+  	var modal = $('.modal-body');
+  	var str = '<div class="container-fluid">\
+  	   			 <div class="row">\
+    				<div class="col-md-4">.col-md-4</div>\
+	    			<div class="col-md-4 col-md-offset-4">.col-md-4 .col-md-offset-4</div>\
+	  			</div>\
+	  			<div class="row">\
+				    <div class="col-md-3 col-md-offset-3">.col-md-3 .col-md-offset-3</div>\
+				    <div class="col-md-2 col-md-offset-4">.col-md-2 .col-md-offset-4</div>\
+			  	</div>\
+			  	<div class="row">\
+			    	<div class="col-md-6 col-md-offset-3">.col-md-6 .col-md-offset-3</div>\
+			  	</div>\
+	  			<div class="row">\
+	    			<div class="col-sm-9">\
+	      				Level 1: .col-sm-9\
+			   			<div class="row">\
+			    			<div class="col-8 col-sm-6">\
+	          					Level 2: .col-8 .col-sm-6\
+	        				</div>\
+	        				<div class="col-4 col-sm-6">\
+	          					Level 2: .col-4 .col-sm-6\
+	        				</div>\
+	      				</div>\
+	    			</div>\
+	  			</div>\
+			</div>';
   }
   </script>
 </body>

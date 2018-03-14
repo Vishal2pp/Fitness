@@ -51,10 +51,12 @@
           <li class="menu-has-children"><a href="#">Manage Members</a>
             <ul>
               <li><a href="addMember">Add Member</a></li>
-              <li><a href="updateMember">Update Member</a></li>
+              <li><a href="updateMember">Update Member Bio</a></li>
               <li><a href="allMembers">All Members</a></li>
               <li><a href="activeMembers">Active Members</a></li>
-              <li><a href="#">Search Members</a></li>
+                <li><a href="deactiveMembers">Deactive Members</a></li>
+              <li><a href="expiredMembers">Expired Members</a></li>
+              <li><a href="#">Renew Member</a></li>
             </ul>
           </li>
          <li class="menu-has-children"><a href="">Manage Payment</a>
@@ -62,6 +64,13 @@
               <li><a href="pendingPayments">Pending Payments</a></li>
               <li><a href="updateMember">Modify Payment</a></li>
               <li><a href="allMembers">Temp</a></li>
+            </ul>
+          </li>
+          <li class="menu-has-children"><a href="#">Package Manager</a>
+            <ul>
+              <li><a href="pendingPayments">Add Package</a></li>
+              <li><a href="updateMember">Modify Package</a></li>
+              <li><a href="allMembers">View Packages</a></li>
             </ul>
           </li>
         </ul>
