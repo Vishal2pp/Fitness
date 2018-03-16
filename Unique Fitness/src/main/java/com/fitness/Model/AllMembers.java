@@ -15,6 +15,37 @@ public class AllMembers {
 	
 	private String pkgStartDate;
 	private String pkgEndDate;
+	private String pkgName;
+	
+	private double pkgAmount;
+	private double pendingAmt;
+	private String dueDate;
+	private double paidAmount;
+	private long receiptNo;
+	private String paymentDate;
+	private String paymentStatus;
+	private String memberStatus;
+	
+	public double getPkgAmount() {
+		return pkgAmount;
+	}
+	public void setPkgAmount(double pkgAmount) {
+		this.pkgAmount = pkgAmount;
+	}
+	public double getPendingAmt() {
+		return pendingAmt;
+	}
+	public void setPendingAmt(double pendingAmt) {
+		this.pendingAmt = pendingAmt;
+	}
+	
+	
+	public String getPkgName() {
+		return pkgName;
+	}
+	public void setPkgName(String pkgName) {
+		this.pkgName = pkgName;
+	}
 	private double pkgAmt;
 	
 	private double pendingAmount;
@@ -145,10 +176,5 @@ public class AllMembers {
 	public void setMemberStatus(String memberStatus) {
 		this.memberStatus = memberStatus;
 	}
-	private double paidAmount;
-	private String dueDate = "00-00-0000";
-	private long receiptNo;
-	private String paymentDate;
-	private String paymentStatus;
-	private String memberStatus;
+	
 }

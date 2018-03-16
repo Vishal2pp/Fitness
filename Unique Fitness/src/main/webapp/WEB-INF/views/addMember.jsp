@@ -45,7 +45,7 @@ table {
     <div class="container">
 
       <div id="logo" class="pull-left">
-        <h1><a href="#body" class="scrollto">Unique <span>Fitness</span></a></h1>
+        <h1><a href="home" class="scrollto">Unique <span>Fitness</span></a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="#body"><img src="img/logo.png" alt="" title="" /></a>-->
       </div>
@@ -67,7 +67,7 @@ table {
          <li class="menu-has-children"><a href="#">Manage Payment</a>
             <ul>
               <li><a href="pendingPayments">Pending Payments</a></li>
-              <li><a href="updateMember">Modify Payment</a></li>
+              <li><a href="getPaymentHistory">Payment History</a></li>
               <li><a href="allMembers">Temp</a></li>
             </ul>
           </li>

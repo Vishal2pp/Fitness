@@ -13,19 +13,16 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.fitness.Model.AllMembers;
 import com.fitness.Model.Member;
+import com.fitness.Model.PendingPayment;
 import com.fitness.Model.UpdateMember;
-import com.fitness.Service.DownloadDataService;
 import com.fitness.Service.MemberService;
-import com.fitness.Service.SmsEmailService;
 
 @Controller
 public class FitnessController {
-	@Autowired
-	private DownloadDataService download;
+	
 	@Autowired
 	private MemberService memberService;
-	@Autowired
-	private SmsEmailService smsMail;
+
 	
 	@RequestMapping(value="addMemberData", method = RequestMethod.POST)
 	public String addMemberData(@ModelAttribute("Member")Member member, ModelMap model) {
@@ -84,9 +81,29 @@ public class FitnessController {
 			return "Failed to update";
 	}
 	
+	@RequestMapping(value = "/pendingPayments", method = RequestMethod.GET)
+	public String pendingPay(ModelMap model) {
+		List<AllMembers> list = memberService.getPendingPayments(model);
+		model.put("data", list);
+		return "pendingPayments";
+	}
 	
+	@ResponseBody
+	@RequestMapping(value = "/getPendingMember", method = RequestMethod.POST)
+	public String getPendingM(@RequestParam("mid") String id, ModelMap model) {
+		String jsonStr = memberService.getPendingMember(id);
+		return jsonStr;
+	}
 	
-	
+	@ResponseBody
+	@RequestMapping(value = "/updatePendingMember", method = RequestMethod.POST)
+	public String updatePayment(@ModelAttribute("PendingPayment")PendingPayment member, ModelMap model) {
+		System.out.println("Id="+member.getId());
+		if(memberService.makePayment(member, model))
+			return "DONE";
+		else
+			return "Failed to update";
+	}
 	public static void main(String[] args) {
 		
 	}

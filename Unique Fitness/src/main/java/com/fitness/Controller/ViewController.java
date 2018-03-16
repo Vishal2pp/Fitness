@@ -42,10 +42,7 @@ public class ViewController {
 		return "addMember";
 	}
 	
-	@RequestMapping(value = "/pendingPayments", method = RequestMethod.GET)
-	public String pendingPay() {
-		return "pendingPayments";
-	}
+	
 	@RequestMapping(value = "/modifyPayment", method = RequestMethod.GET)
 	public String modifyPay() {
 		return "modifyPayment";

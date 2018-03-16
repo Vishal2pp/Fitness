@@ -13,6 +13,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.fitness.Model.AllMembers;
 import com.fitness.Model.Member;
+import com.fitness.Model.PendingPayment;
 import com.fitness.Model.UpdateMember;
 import com.fitness.dao.MemberDao;
 
@@ -111,5 +112,17 @@ public class MemberServiceImpl implements MemberService{
 	@Override
 	public boolean updateMember(UpdateMember member, ModelMap model) {
 		return memberDao.updateMember(member, model);
+	}
+	@Override
+	public List<AllMembers> getPendingPayments(ModelMap model) {
+		return memberDao.getPendingPayments(model);
+	}
+	@Override
+	public String getPendingMember(String id) {
+		return memberDao.getPendingMember(id);
+	}
+	@Override
+	public boolean makePayment(PendingPayment member, ModelMap model) {
+		return memberDao.makePayment(member, model);
 	}
 }

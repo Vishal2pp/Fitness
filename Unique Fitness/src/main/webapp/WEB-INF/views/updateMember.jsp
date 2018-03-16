@@ -43,7 +43,7 @@
     <div class="container">
 
       <div id="logo" class="pull-left">
-        <h1><a href="#body" class="scrollto">Unique <span>Fitness</span></a></h1>
+        <h1><a href="home" class="scrollto">Unique <span>Fitness</span></a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="#body"><img src="img/logo.png" alt="" title="" /></a>-->
       </div>
@@ -59,13 +59,13 @@
               <li><a href="activeMembers">Active Members</a></li>
               <li><a href="deactiveMembers">Deactive Members</a></li>
               <li><a href="expiredMembers">Expired Members</a></li>
-              <li><a href="#">Renew Member</a></li>
+              <li><a href="#">Upcoming Expirations</a></li>
             </ul>
           </li>
          <li class="menu-has-children"><a href="#">Manage Payment</a>
             <ul>
               <li><a href="pendingPayments">Pending Payments</a></li>
-              <li><a href="updateMember">Modify Payment</a></li>
+              <li><a href="getPaymentHistory">Payment History</a></li>
               <li><a href="allMembers">Temp</a></li>
             </ul>
           </li>
@@ -90,11 +90,14 @@
   <tr>
   	<th>Reg.No.</th>
   	<th>Name</th>
-  	<th>Age</th>
   	<th>Email</th>
   	<th>Number</th>
+  	<!-- <th>Age</th>
   	<th>DOB</th>
-  	<th>Reg. Date</th>
+  	<th>Reg. Date</th> -->
+  	<th>Package</th>
+  	<th>Start Date</th>
+  	<th>End Date</th>
   	<th>Status</th>
   	<th>Photo</th>
   	<th>View Details</th>
@@ -115,11 +118,14 @@
 </c:choose>
   <td>${member.id}</td>
   <td>${member.name}</td>
-  <td>${member.age}</td>
   <td>${member.email}</td>
   <td>${member.number}</td>
+  <td>${member.pkgName}</td>
+  <td>${member.pkgStartDate}</td>
+  <td>${member.pkgEndDate}</td>
+  <%-- <td>${member.age}</td>
   <td>${member.dob}</td>
-  <td>${member.regDate}</td>
+  <td>${member.regDate}</td> --%>
   <td>${member.memberStatus}</td>
   <td><img src="data:image/jpg;base64,${member.imagePath}" height="50px" width="50px"/></td>
   <td><button type="button" class="btn btn-info" id="${member.id}" data-toggle="modal" data-target="#myModal" onclick="updateMe('${member.id}')">Update</button></td>
